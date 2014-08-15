@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<meta content="telephone=no" name="format-detection" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Expandable elements</title>
+
+<style type="text/css">
+    /*.in{
+        background: brown;
+        color: white;
+    }
+
+    .in.rot{
+        -webkit-animation: rotate 1s;
+        -webkit-animation-fill-mode: forwards;
+    }*/
+
+    @-webkit-keyframes rotate{
+        0{
+            -webkit-transform: translate3d(0, 0, 0);
+        }
+        10%{
+            -webkit-transform: translate3d(0, 0, -20px);
+        }
+        20%{
+            -webkit-transform: translate3d(0, 0, 0px);
+            background: purple;
+        }
+        21%{
+            -webkit-transform: rotateX(0deg);
+        }
+        80%{
+            -webkit-transform: rotateX(180deg);
+        }
+        81%, 100%{
+            -webkit-transform: rotateX(0deg);
+            background: purple;
+        }
+    }
+
+    .wrap{
+        width: 100px;
+        height: 30px;
+        position: relative;
+    }
+
+    .wrap input{
+        position: absolute;
+        top: 0;
+        left: 0;
+        outline: none;
+        border: 0;
+        width: 100%;
+        height: 100%;
+        color: white;
+
+        transform-style: preserve-3d;
+        -webkit-backface-visibility: hidden;
+        transition: 0.8s;
+    }
+
+    .in{
+        -webkit-transform: rotateX(0deg);
+
+        background: brown;
+    }
+
+    .out{
+        -webkit-transform: rotateX(-180deg);
+
+        background: purple;
+    }
+</style>
+</head>
+<body>
+    <div class="wrap">
+        <input id="in" class="in" placeholder="waw">
+        <input id="out" class="out">
+    </div>
+
+
+    <script type="text/javascript">
+        var first = document.getElementById('in');
+        var second = document.getElementById('out');
+
+        first.onclick = function() {
+            first.style.WebkitTransform = 'rotateX(180deg)';
+            second.style.WebkitTransform = 'rotateX(0deg)';
+
+            second.focus();
+        }
+
+        second.onblur = function(){
+            first.style.WebkitTransform = 'rotateX(0deg)';
+            second.style.WebkitTransform = 'rotateX(-180deg)';
+
+            first.value = second.value;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#coke{
+    width: 194px;
+    height: 336px;
+    position: absolute;
+    top: 50%;
+    margin-top: -168px;
+    left: 50%;
+    margin-left: -97px;
+}
+
+#can{
+    background-image: url(images/coke-can.png);
+    background-repeat: no-repeat;
+    height: 336px;
+    position: relative;
+}
+
+p{
+    margin: 0;
+    padding: 0;
+    float: left;
+    height: 336px;
+    background-image: url(images/coke-label.jpg);
+    background-position-y: 10px;
+
+    background-repeat: repeat-x;
+    width: 1px;
+
+    -webkit-transition: background-position-x 5s linear;
+}
+
+#x1 {background-position-x: 5px;}
+#x2 {background-position-x: -1px;}
+#x3 {background-position-x: -5px;}
+#x4 {background-position-x: -9px;}
+#x5 {background-position-x: -12px;}
+#x6 {background-position-x: -15px;}
+#x7 {background-position-x: -18px;}
+#x8 {background-position-x: -21px;}
+#x9 {background-position-x: -23px;}
+#x10 {background-position-x: -25px;}
+#x11 {background-position-x: -27px;}
+#x12 {background-position-x: -29px;}
+#x13 {background-position-x: -31px;}
+#x14 {background-position-x: -33px;}
+#x15 {background-position-x: -35px;}
+#x16 {background-position-x: -37px; width: 2px;}
+#x17 {background-position-x: -40px;}
+#x18 {background-position-x: -42px; width: 2px;}
+#x19 {background-position-x: -45px; width: 2px;}
+#x20 {background-position-x: -48px; width: 2px;}
+#x21 {background-position-x: -51px; width: 2px;}
+#x22 {background-position-x: -54px; width: 3px;}
+#x23 {background-position-x: -58px; width: 3px;}
+#x24 {background-position-x: -62px; width: 4px;}
+#x25 {background-position-x: -67px; width: 5px;}
+#x26 {background-position-x: -73px; width: 7px;}
+#x27 {background-position-x: -81px; width: 12px;}
+#x28 {background-position-x: -94px; width: 55px;}
+#x29 {background-position-x: -150px; width: 11px;}
+#x30 {background-position-x: -162px; width: 6px;}
+#x31 {background-position-x: -168px; width: 5px;}
+#x32 {background-position-x: -174px; width: 4px;}
+#x33 {background-position-x: -179px; width: 3px;}
+#x34 {background-position-x: -183px; width: 2px;}
+#x35 {background-position-x: -186px; width: 3px;}
+#x36 {background-position-x: -190px; width: 2px;}
+#x37 {background-position-x: -193px; width: 2px;}
+#x38 {background-position-x: -196px;}
+#x39 {background-position-x: -198px; width: 2px;}
+#x40 {background-position-x: -201px;}
+#x41 {background-position-x: -203px;}
+#x42 {background-position-x: -205px;}
+#x43 {background-position-x: -207px;}
+#x44 {background-position-x: -209px;}
+#x45 {background-position-x: -210px;}
+#x46 {background-position-x: -212px;}
+#x47 {background-position-x: -214px;}
+#x48 {background-position-x: -216px;}
+#x49 {background-position-x: -219px;}
+#x50 {background-position-x: -222px;}
+#x51 {background-position-x: -225px;}
+#x52 {background-position-x: -228px;}
+#x53 {background-position-x: -232px;}
+#x54 {background-position-x: -236px;}
+#x55 {background-position-x: -243px;}
+
+#coke:hover #x1 {background-position-x: calc(5px - 537px);}
+#coke:hover #x2 {background-position-x: calc(-1px - 537px);}
+#coke:hover #x3 {background-position-x: calc(-5px - 537px);}
+#coke:hover #x4 {background-position-x: calc(-9px - 537px);}
+#coke:hover #x5 {background-position-x: calc(-12px - 537px);}
+#coke:hover #x6 {background-position-x: calc(-15px - 537px);}
+#coke:hover #x7 {background-position-x: calc(-18px - 537px);}
+#coke:hover #x8 {background-position-x: calc(-21px - 537px);}
+#coke:hover #x9 {background-position-x: calc(-23px - 537px);}
+#coke:hover #x10 {background-position-x: calc(-25px - 537px);}
+#coke:hover #x11 {background-position-x: calc(-27px - 537px);}
+#coke:hover #x12 {background-position-x: calc(-29px - 537px);}
+#coke:hover #x13 {background-position-x: calc(-31px - 537px);}
+#coke:hover #x14 {background-position-x: calc(-33px - 537px);}
+#coke:hover #x15 {background-position-x: calc(-35px - 537px);}
+#coke:hover #x16 {background-position-x: calc(-37px - 537px);}
+#coke:hover #x17 {background-position-x: calc(-40px - 537px);}
+#coke:hover #x18 {background-position-x: calc(-42px - 537px);}
+#coke:hover #x19 {background-position-x: calc(-45px - 537px);}
+#coke:hover #x20 {background-position-x: calc(-48px - 537px);}
+#coke:hover #x21 {background-position-x: calc(-51px - 537px);}
+#coke:hover #x22 {background-position-x: calc(-54px - 537px);}
+#coke:hover #x23 {background-position-x: calc(-58px - 537px);}
+#coke:hover #x24 {background-position-x: calc(-62px - 537px);}
+#coke:hover #x25 {background-position-x: calc(-67px - 537px);}
+#coke:hover #x26 {background-position-x: calc(-73px - 537px);}
+#coke:hover #x27 {background-position-x: calc(-81px - 537px);}
+#coke:hover #x28 {background-position-x: calc(-94px - 537px);}
+#coke:hover #x29 {background-position-x: calc(-150px - 537px);}
+#coke:hover #x30 {background-position-x: calc(-162px - 537px);}
+#coke:hover #x31 {background-position-x: calc(-168px - 537px);}
+#coke:hover #x32 {background-position-x: calc(-174px - 537px);}
+#coke:hover #x33 {background-position-x: calc(-179px - 537px);}
+#coke:hover #x34 {background-position-x: calc(-183px - 537px);}
+#coke:hover #x35 {background-position-x: calc(-186px - 537px);}
+#coke:hover #x36 {background-position-x: calc(-190px - 537px);}
+#coke:hover #x37 {background-position-x: calc(-193px - 537px);}
+#coke:hover #x38 {background-position-x: calc(-196px - 537px);}
+#coke:hover #x39 {background-position-x: calc(-198px - 537px);}
+#coke:hover #x40 {background-position-x: calc(-201px - 537px);}
+#coke:hover #x41 {background-position-x: calc(-203px - 537px);}
+#coke:hover #x42 {background-position-x: calc(-205px - 537px);}
+#coke:hover #x43 {background-position-x: calc(-207px - 537px);}
+#coke:hover #x44 {background-position-x: calc(-209px - 537px);}
+#coke:hover #x45 {background-position-x: calc(-210px - 537px);}
+#coke:hover #x46 {background-position-x: calc(-212px - 537px);}
+#coke:hover #x47 {background-position-x: calc(-214px - 537px);}
+#coke:hover #x48 {background-position-x: calc(-216px - 537px);}
+#coke:hover #x49 {background-position-x: calc(-219px - 537px);}
+#coke:hover #x50 {background-position-x: calc(-222px - 537px);}
+#coke:hover #x51 {background-position-x: calc(-225px - 537px);}
+#coke:hover #x52 {background-position-x: calc(-228px - 537px);}
+#coke:hover #x53 {background-position-x: calc(-232px - 537px);}
+#coke:hover #x54 {background-position-x: calc(-236px - 537px);}
+#coke:hover #x55 {background-position-x: calc(-243px - 537px);}
+
+.tips{
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+    margin-top: 30px;
+    color: rgb(165, 165, 165);
+}

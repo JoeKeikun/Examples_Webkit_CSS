@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<meta content="telephone=no" name="format-detection" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Diamond</title>
+
+<script type="text/javascript" src="markdown.min.js"></script>
+
+<style type="text/css">
+    *{
+        box-sizing: border-box;
+    }
+
+    .diamond{
+        position: absolute;
+        left: 50%;
+        margin-left: -115px;
+        top: 50%;
+        margin-top: -100px;
+        width: 230px;
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .diamond:before{
+        content: '';
+        border-width: 80px;
+        border-style: solid;
+        border-color: rgb(53, 152, 219) rgb(53, 152, 219) rgb(169, 204, 240) rgb(169, 204, 240);
+        width: 0;
+        height: 0;
+        transform: rotate(-45deg);
+        position: absolute;
+        left: 50%;
+        margin-left: -80px;
+        top: -23px;
+    }
+
+    .diamond:after{
+        content: '';
+        border-radius: 50%;
+        width: 24px;
+        height: 4px;
+        box-shadow: 0 0 15px black;
+        background-color: rgba(0, 0, 0, 0.31);
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        margin-left: -12px;
+    }
+
+    .center__part{
+        border-color: rgb(102, 178, 228) transparent rgb(134, 195, 240) transparent;
+        border-width: 57px;
+        border-style: solid;
+        width: 0;
+        height: 0;
+        position: absolute;
+        left: 57px;
+    }
+
+    .center__part:before{
+        content: '';
+        border-color: transparent transparent rgba(134, 195, 240, 0.7) transparent;
+        border-width: 57px;
+        border-style: solid;
+        width: 0;
+        height: 0;
+        position: absolute;
+        left: -60px;
+        top: -114px;
+    }
+
+    .center__part:after{
+        content: '';
+        border-color: rgba(108, 182, 231, 0.6) transparent transparent transparent;
+        border-width: 113px 55px 0 60px;
+        border-style: solid;
+        width: 0;
+        height: 0;
+        position: absolute;
+        left: -60px;
+    }
+
+</style>
+</head>
+<body>
+    <div class="diamond"> 
+        <div class="center__part"></div>
+    </div>
+</body>
+</html>
