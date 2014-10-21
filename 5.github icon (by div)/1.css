@@ -1,0 +1,112 @@
+body {
+    background-color: #666;
+    margin: 0;
+    padding: 0;
+}   
+.demo {
+    width: 200px;
+    height: 200px;
+    background: url(1.png);
+}
+
+/*------------- head -----------------*/
+.head{
+    position: absolute;
+    top: 51px;
+    left: 237px;
+    width: 120px;
+    height: 95px;
+    border-radius: 80px;
+    background: #19A6E4;
+}
+
+/*------------- ear -----------------*/
+.ear{
+    position: absolute;
+}
+.ear--left{
+    left: -4px;
+    top: 8px;
+}
+.ear--right{
+    -webkit-transform: scaleX(-1);
+    left: 125px;
+    top: 8px;
+}
+
+.ear:before, .ear:after{
+    content: '';
+    border-style: solid;
+    position: absolute;
+}
+
+.ear:before{
+    border-top-left-radius: 17px 8px;
+    border-width: 17px;
+    border-color: #19A6E4 transparent transparent transparent;
+    -webkit-transform: rotate(30deg) translate(-5px, -15px);
+}
+.ear:after{
+    border-bottom-left-radius: 23px 8px;
+    border-top-left-radius: 43px;
+    border-width: 15px;
+    border-color: transparent transparent transparent #19A6E4;
+    -webkit-transform: rotate(-33deg) translate(18px,-14px);
+}
+
+/*------------- face -----------------*/
+.face:before, .face:after{
+    position: absolute;
+    content: '';
+    background: white;
+    width: 62px;
+    height: 46px;
+    border-radius: 20px;
+}
+.face:before{
+    -webkit-transform: rotate(5deg) translate(-44px, -3px);
+}
+.face:after{
+    -webkit-transform: rotate(-5deg) translate(-17px, -8.5px);
+}
+
+/*------------- eye -----------------*/
+.eye--left, .eye--right{
+    background: #19A6E4;
+    width: 12px;
+    height: 20px;
+    border-radius: 50%;
+}
+.eye--left{
+    -webkit-transform: translate(-28px, 2px);
+}
+.eye--right{
+    -webkit-transform: translate(16px, 2px);
+}
+
+/*------------- nose -----------------*/
+.nose{
+    width: 8px;
+    height: 5px;
+    border-radius: 50%;
+    background: #19A6E4;
+    -webkit-transform: translate(-4px, 19px);
+}
+
+/*------------- mouse -----------------*/
+.mouse{
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    border: 2px solid #19A6E4;
+    border-top-color: transparent;
+    -webkit-transform: rotate(45deg) translate(7px, 19px);
+    border-left-color: transparent;
+}
+
+/*------------- combine -----------------*/
+.face,.eye,.nose,.mouse{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
