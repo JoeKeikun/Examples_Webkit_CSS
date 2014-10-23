@@ -7,7 +7,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    border: 40px solid rgba(18, 61, 199, 0.43);
+    border: 60px solid rgba(18, 61, 199, 0.1);
     border-radius: 50%;
 }
 .circle {

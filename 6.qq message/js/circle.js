@@ -5,6 +5,7 @@ Circle.prototype.position = null;
 Circle.prototype.radius = null;
 Circle.prototype.color = 'red';
 Circle.prototype.active = false;
+Circle.prototype.stickFlg = false;
 
 Circle.prototype.init = function() {
     var me = this;
