@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<style>
+		.outer {
+    		position: relative;
+			width: 150px;
+		    height: 20px;
+		    overflow: hidden;
+
+			border: 1px solid;
+			
+		    line-height: 20px;
+		}
+
+		.inner {
+			position: absolute;
+		    
+			white-space: nowrap;
+
+		    animation: roll 5s linear infinite;
+		}
+		.inner:after {
+			content: attr(data-val);
+			position: absolute;
+			margin-left: 150px; /* 间隔空间 */
+		}
+
+		@keyframes roll {
+			0% {
+				transform: translateX(0);
+			}
+			100% {
+				transform: translateX(calc(-100% - 150px));  /* 自身宽度 + 间隔空间 */
+			}
+		}
+		</style>
+	</head>
+
+	<body>
+		<div class="outer">
+			<div>
+				<div class="inner" data-val="abcd efgh ijkl mnop qrst uvwx yz">abcd efgh ijkl mnop qrst uvwx yz</div>
+			</div>
+		</div>
+	</body>
+</html>
