@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style>
+			html { -webkit-text-size-adjust:none; }
+			* {box-sizing: border-box;}
+
+			.line{
+				table-layout:fixed;
+				width:100%;
+				line-height: 18px;
+			}
+			.icon{
+				width: 20px;
+				border: 1px solid;
+				text-align: center;
+				color: goldenrod;
+			}
+			.hastail:after {
+				content: '惠';
+				font-size: 10px;
+				padding: 1px;
+				border: 1px solid;
+				display: inline-block;
+				margin-left: -15px;
+				line-height: 1;
+				color: red;
+				vertical-align: top;
+			}
+			#titlewrap {white-space: nowrap;}
+			.title {
+				display: inline-block;
+				vertical-align: top;
+				max-width: 100%;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			.hastail .title {
+				padding-right: 19px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<p>改变窗口，尾部icon自适应追加在文章末尾；超长时，文字显示省略号，但是icon继续显示；</p>
+
+		<button id="toggle">toggle tail</button>
+		<br><br>
+		<table class="line">
+			<tr>
+				<td style="width: 30px;"><div class="icon">I</div></td>
+				<td id="titlewrap" class="hastail">
+					<div class="title">text text text text text text text text text text text text text text text text</div>
+				</td>
+			</tr>
+		</table>
+
+		<script>
+			var titlewrap = document.getElementById('titlewrap');
+			var button = document.getElementById('toggle');
+			button.onclick = function() {
+				titlewrap.classList.toggle('hastail');
+			};
+		</script>
+	</body>
+</html>
