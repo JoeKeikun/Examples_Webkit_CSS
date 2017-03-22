@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <style>
+        .outer {
+            position: relative;
+            height: 40px;
+            font-size: 30px;
+            line-height: 40px;
+            white-space: nowrap;
+        }
+        .outer:before {
+            content: attr(data-val);
+            color: #e0e0e0;
+        }
+
+        .inner {
+            position: absolute;
+            
+            width: 0;
+            top: 0;
+            overflow: hidden;
+
+            animation: roll 6s linear infinite;
+        }
+
+        @keyframes roll {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+        </style>
+    </head>
+
+    <body>
+        <div class="outer" data-val="abcd efgh ijkl mnop qrst uvwx yz">
+            <div class="inner">
+                abcd efgh ijkl mnop qrst uvwx yz
+            </div>
+        </div>
+    </body>
+</html>
