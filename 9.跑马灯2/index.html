@@ -1,44 +1,140 @@
 <html>
     <head>
         <style>
-        .outer {
+        .wrapper {
             position: relative;
-            height: 40px;
-            font-size: 30px;
-            line-height: 40px;
-            white-space: nowrap;
         }
-        .outer:before {
-            content: attr(data-val);
+
+        .base {
             color: #e0e0e0;
+            display: inline-block;
         }
 
-        .inner {
+        .cover {
             position: absolute;
-            
-            width: 0;
             top: 0;
-            overflow: hidden;
-
-            animation: roll 6s linear infinite;
+            width: 100%;
+            pointer-events: none;
         }
 
-        @keyframes roll {
-            0% {
-                width: 0;
-            }
-            100% {
-                width: 100%;
-            }
+        .cover-line {
+            position: absolute;
+            overflow: hidden;
+        }
+
+        .text {
+            position: absolute;
+            width: 100%;
         }
         </style>
     </head>
 
     <body>
-        <div class="outer" data-val="abcd efgh ijkl mnop qrst uvwx yz">
-            <div class="inner">
-                abcd efgh ijkl mnop qrst uvwx yz
-            </div>
-        </div>
+        <div id="wrapper" class="wrapper" data-val="abcd efgh ijkl mnop qrst uvwx yzabcd efgh ijkl mnop qrst uvwx yz" data-fontsize="30px" data-lineheight="40px"></div>
+        <button id="read">read</button>
+
+        <script src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/js/lib/jquery-1.10.2_d88366fd.js"></script>
+        <script>
+            var $read = $('#read');
+
+            var $wrapper = $('#wrapper');
+            // 初始化样式
+            $wrapper.css({
+                'font-size': $wrapper.data('fontsize'),
+                'line-height': $wrapper.data('lineheight'),
+            });
+
+            // 内容
+            var $baseCont = $('<div class="base">' + $wrapper.data('val') + '</div>');
+            // 遮罩
+            var $cover = $('<div class="cover"></div>');
+            var coverChilds = [];
+
+            $wrapper.append($baseCont);
+            $wrapper.append($cover);
+
+
+            function regenerateCover() {
+                var lHeight = parseInt($wrapper.data('lineheight'));
+
+
+                var rect = $baseCont[0].getBoundingClientRect();
+                $wrapper.data('width', rect.width ? rect.width : $baseCont.width());
+                $wrapper.data('height', rect.height ? rect.height : $baseCont.height());
+
+                var w = $wrapper.data('width');
+                var h = $wrapper.data('height');
+
+                var lineNum = h / lHeight;
+
+                coverChilds.length = 0;
+                for (var i = 0; i < lineNum; i++) {
+                    var tmpDom = $('<div class="cover-line"><div class="text">' + $wrapper.data('val') + '</div></div>');
+                    tmpDom.css({
+                        width: 0,
+                        height: lHeight,
+                        top: i * lHeight
+                    });
+                    tmpDom.find('.text').css({
+                        width: w,
+                        top: -i * lHeight
+                    });
+
+                    coverChilds.push(tmpDom);
+                }
+
+                $cover.html('').append(coverChilds)
+            }
+
+            var intervalId;
+            $read.on('click', function() {
+                if (intervalId) {
+                    clearInterval(intervalId)
+                    intervalId = null;
+                    // 清除 cover
+                    $cover.html('');
+                }
+
+                $wrapper.data('progress', 0);
+                regenerateCover();
+
+                var lineNum = coverChilds.length;
+                var splitPoint = 100 / coverChilds.length;
+
+                var w = $wrapper.data('width');
+                var h = $wrapper.data('height');
+
+                var index = 0;
+                intervalId = setInterval(function() {
+                    var p = $wrapper.data('progress');
+
+                    if (p > 100) {
+                        clearInterval(intervalId)
+                        intervalId = null;
+                        // 清除 cover
+                        $cover.html('');
+                        return;
+                    }
+
+
+                    if (p > (index + 1) * splitPoint) {
+                        coverChilds[index].css('width', w);
+                        index++;
+                    } else {
+                        var len;
+                        if (p % splitPoint === 0 && p > 0) {
+                            len = w;
+                        } else {
+                            len = (p % splitPoint) / splitPoint * w
+                        }
+
+                        coverChilds[index].css('width', len);
+                    }
+
+                    $wrapper.data('progress', p + 1);
+
+                }, 1000 / 60);
+            });
+        </script>
     </body>
 </html>
